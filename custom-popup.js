@@ -15,15 +15,16 @@ window.addEventListener('popstate', function(e) {
   fnc_popup_control();
 });
 
+var popupimg = '';
+var imgWidth = 0;
+var imgHeight = 0;
 window.onload = function () {
   // ポップアップ表示画像読込
-  const popupimg = document.getElementsByName("popupimg")[0].value;
+  popupimg = document.getElementsByName("popupimg")[0].value;
   // 画像オブジェクトを作成してサイズを取得
   const readimg = new Image();
   readimg.src = popupimg;
 
-  var imgWidth = 0;
-  var imgHeight = 0;
   // 画像がロードされたら、サイズを取得しポップアップを表示
   readimg.onload = function() {
     imgWidth = readimg.width;
