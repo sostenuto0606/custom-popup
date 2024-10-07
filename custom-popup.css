@@ -1,0 +1,28 @@
+/* 閉じるボタン */
+.custom-close-button-class {
+  position: absolute;
+  top: -25px;
+  right: 0px;
+  background-color: #000000;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.0rem;
+  border: 2px solid #FFFFFF;
+}
+.custom-close-button-class:hover {
+  background-color: #000000;
+  border: 2px solid #FFFFFF;
+}
+/* ポップアップ */
+.swal2-html-container {
+  padding: 0!important;
+}
+.swal2-html-container:hover {
+  opacity: 0.8; 
+}
+.custom-popup-class {
+  padding: 0;
+}
+.imgpop {
+  display: block;
+}
