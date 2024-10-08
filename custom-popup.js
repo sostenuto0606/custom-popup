@@ -1,24 +1,25 @@
-// PC用
-window.addEventListener("mouseout", function(e) {
-  if (!e.toElement && !e.relatedTarget && e.clientY < 10) {
-    // オブジェクト外になったらポップアップ表示
-    fnc_popup_control();
-  }
-});
-
-// モバイル用
-// 初回読み込み時に履歴にエントリを追加
-history.pushState(null, null, location.href);
-// popstate イベントリスナーの設定
-window.addEventListener('popstate', function(e) {
-  // ポップアップ表示
-  fnc_popup_control();
-});
-
 var popupimg = '';
 var imgWidth = 0;
 var imgHeight = 0;
 window.onload = function () {
+
+  // PC用
+  window.addEventListener("mouseout", function(e) {
+    if (!e.toElement && !e.relatedTarget && e.clientY < 10) {
+      // オブジェクト外になったらポップアップ表示
+      fnc_popup_control();
+    }
+  });
+
+  // モバイル用
+  // 初回読み込み時に履歴にエントリを追加
+  history.pushState(null, null, location.href);
+  // popstate イベントリスナーの設定
+  window.addEventListener('popstate', function(e) {
+    // ポップアップ表示
+    fnc_popup_control();
+  });
+
   // ポップアップ表示画像読込
   popupimg = document.getElementsByName("popupimg")[0].value;
   // 画像オブジェクトを作成してサイズを取得
