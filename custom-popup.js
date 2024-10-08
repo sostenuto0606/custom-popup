@@ -10,6 +10,8 @@ window.onload = function () {
     }
   });
   // モバイル用
+  // 初回読み込み時に履歴にエントリを追加
+  history.pushState(null, null, location.href);
   // popstate イベントリスナーの設定
   window.addEventListener('popstate', function(e) {
     // ポップアップ表示
@@ -52,6 +54,8 @@ function fnc_popup_control() {
         // 閉じるボタンが押された場合の処理
         // 閲覧済ストレージ保存
         sessionStorage.setItem('gorgpop', '1');
+        // 履歴エントリをクリア
+        history.pushState(null, null, null);
       }
     });
   }
@@ -62,6 +66,8 @@ function fnc_popup_control() {
       // 閲覧済ストレージ保存
       sessionStorage.setItem('gorgpop', '1');
       Swal.close(); // ポップアップを閉じる
+      // 履歴エントリをクリア
+      history.pushState(null, null, null);
     });
   }
 }
