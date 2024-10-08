@@ -10,8 +10,6 @@ window.onload = function () {
     }
   });
   // モバイル用
-  // 初回読み込み時に履歴にエントリを追加
-  history.pushState(null, null, location.href);
   // popstate イベントリスナーの設定
   window.addEventListener('popstate', function(e) {
     // ポップアップ表示
